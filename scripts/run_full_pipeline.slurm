@@ -1,21 +1,18 @@
 #!/bin/bash
 #SBATCH --job-name=tree-canopy-full
+#SBATCH --partition=a30_normal_q
+#SBATCH --account=cs5814
 #SBATCH --output=logs/%x-%j.out
 #SBATCH --error=logs/%x-%j.err
-#SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=48:00:00
+#SBATCH --time=18:00:00
 
 set -euo pipefail
 
-# Edit these for your cluster.
 PROJECT_DIR="${PROJECT_DIR:-$SLURM_SUBMIT_DIR}"
-CONDA_SETUP="${CONDA_SETUP:-$HOME/miniconda3/etc/profile.d/conda.sh}"
-CONDA_ENV_NAME="${CONDA_ENV_NAME:-base}"
-LOAD_BASHRC="${LOAD_BASHRC:-0}"
-MODULES_TO_LOAD="${MODULES_TO_LOAD:-}"
+CONDA_ENV_NAME="${CONDA_ENV_NAME:-dl}"
 
 DATA_ROOT="${DATA_ROOT:-$PROJECT_DIR/data}"
 RUNS_ROOT="${RUNS_ROOT:-$PROJECT_DIR/runs}"
@@ -44,24 +41,8 @@ mkdir -p "$LOG_ROOT" "$RUNS_ROOT"
 
 cd "$PROJECT_DIR"
 
-if [[ "$LOAD_BASHRC" == "1" && -f "$HOME/.bashrc" ]]; then
-  source "$HOME/.bashrc"
-fi
-
-if command -v module >/dev/null 2>&1 && [[ -n "$MODULES_TO_LOAD" ]]; then
-  for mod in $MODULES_TO_LOAD; do
-    module load "$mod"
-  done
-fi
-
-if [[ -f "$CONDA_SETUP" ]]; then
-  source "$CONDA_SETUP"
-else
-  echo "Conda setup script not found: $CONDA_SETUP" >&2
-  exit 1
-fi
-
-conda activate "$CONDA_ENV_NAME"
+module load Miniconda3
+source activate "$CONDA_ENV_NAME"
 
 PYTHON_BIN="$(command -v python)"
 if [[ -z "$PYTHON_BIN" ]]; then
@@ -72,7 +53,6 @@ fi
 echo "Project dir: $PROJECT_DIR"
 echo "Python: $PYTHON_BIN"
 echo "Conda env: $CONDA_ENV_NAME"
-echo "Modules: ${MODULES_TO_LOAD:-<none>}"
 echo "Data root: $DATA_ROOT"
 echo "Runs root: $RUNS_ROOT"
 echo "Reference year: $REFERENCE_YEAR"
