@@ -1,0 +1,2110 @@
+{
+  "years": {
+    "2015": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "uint8",
+        "nodata": null,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "label": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -3.4028230607370965e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    },
+    "2016": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.989931402763574,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.986955300545453,
+          1582671.1151552987,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688666.0408314038,
+          1582671.1151552987
+        ],
+        "res": [
+          29.989931402763574,
+          29.986955300545453
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    },
+    "2017": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.989931402763574,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.986955300545453,
+          1582671.1151552987,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688666.0408314038,
+          1582671.1151552987
+        ],
+        "res": [
+          29.989931402763574,
+          29.986955300545453
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    },
+    "2018": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.989931402763574,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.986955300545453,
+          1582671.1151552987,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688666.0408314038,
+          1582671.1151552987
+        ],
+        "res": [
+          29.989931402763574,
+          29.986955300545453
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    },
+    "2019": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.989931402763574,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.986955300545453,
+          1582671.1151552987,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688666.0408314038,
+          1582671.1151552987
+        ],
+        "res": [
+          29.989931402763574,
+          29.986955300545453
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    },
+    "2020": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.989931402763574,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.986955300545453,
+          1582671.1151552987,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688666.0408314038,
+          1582671.1151552987
+        ],
+        "res": [
+          29.989931402763574,
+          29.986955300545453
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527795.0,
+          1688655.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    },
+    "2021": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.98993140276359,
+          0.0,
+          1632224.9899314027,
+          0.0,
+          -29.98993140276359,
+          1582676.56439846,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "int8",
+        "nodata": -128.0,
+        "count": 1,
+        "bounds": [
+          1632224.9899314027,
+          1527794.9899314027,
+          1688666.0408314038,
+          1582676.56439846
+        ],
+        "res": [
+          29.98993140276359,
+          29.98993140276359
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -3.4028234663852886e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688685.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -3.4028234663852886e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688685.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -3.4028234663852886e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688685.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -3.4028234663852886e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688685.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      },
+      "label": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055439,
+          0.0,
+          1632224.9994961105,
+          0.0,
+          -29.999496110554407,
+          1582694.077378425,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632224.9994961105,
+          1527794.9994961105,
+          1688684.0511761738,
+          1582694.077378425
+        ],
+        "res": [
+          29.99949611055439,
+          29.999496110554407
+        ]
+      }
+    },
+    "2022": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.98993140276359,
+          0.0,
+          1632224.9899314027,
+          0.0,
+          -29.98993140276359,
+          1582676.56439846,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "int8",
+        "nodata": -128.0,
+        "count": 1,
+        "bounds": [
+          1632224.9899314027,
+          1527794.9899314027,
+          1688666.0408314038,
+          1582676.56439846
+        ],
+        "res": [
+          29.98993140276359,
+          29.98993140276359
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      }
+    },
+    "2023": {
+      "nlcd": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.98993140276359,
+          0.0,
+          1632224.9899314027,
+          0.0,
+          -29.98993140276359,
+          1582676.56439846,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1830,
+          1882
+        ],
+        "dtype": "int8",
+        "nodata": -128.0,
+        "count": 1,
+        "bounds": [
+          1632224.9899314027,
+          1527794.9899314027,
+          1688666.0408314038,
+          1582676.56439846
+        ],
+        "res": [
+          29.98993140276359,
+          29.98993140276359
+        ]
+      },
+      "ndvi": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": 3.3999999521443642e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "lst": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float64",
+        "nodata": 1.79e+308,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "ppt": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "tmin": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "tmean": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "tmax": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          29.99949611055559,
+          0.0,
+          1632195.0,
+          0.0,
+          -29.9994961105542,
+          1582724.0768745353,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1832,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688684.0511761762,
+          1582724.0768745353
+        ],
+        "res": [
+          29.99949611055559,
+          29.9994961105542
+        ]
+      },
+      "label": {
+        "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "transform": [
+          30.0,
+          0.0,
+          1632195.0,
+          0.0,
+          -30.0,
+          1582695.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "shape": [
+          1831,
+          1883
+        ],
+        "dtype": "float32",
+        "nodata": -3.4028234663852886e+38,
+        "count": 1,
+        "bounds": [
+          1632195.0,
+          1527765.0,
+          1688685.0,
+          1582695.0
+        ],
+        "res": [
+          30.0,
+          30.0
+        ]
+      }
+    }
+  },
+  "train_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "reference_year": 2015,
+  "reference_profile": {
+    "crs": "PROJCS[\"Albers_Conical_Equal_Area\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "transform": [
+      30.0,
+      0.0,
+      1632195.0,
+      0.0,
+      -30.0,
+      1582695.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "shape": [
+      1830,
+      1882
+    ],
+    "dtype": "uint8",
+    "nodata": null,
+    "count": 1,
+    "bounds": [
+      1632195.0,
+      1527795.0,
+      1688655.0,
+      1582695.0
+    ],
+    "res": [
+      30.0,
+      30.0
+    ]
+  }
+}
