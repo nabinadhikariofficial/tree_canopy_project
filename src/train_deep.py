@@ -10,13 +10,23 @@ from tqdm import tqdm
 
 from common import CHANNEL_ORDER, compute_channel_stats, discover_year_paths, get_split_mask, resolve_reference_path, save_json, set_seed, stack_inputs, canopy_metrics, get_torch_device, should_pin_memory
 from data import MultiYearRasterStore, PatchDataset, PairConsistencyDataset, MultiPairConsistencyDataset
-from losses import masked_mse, temporal_consistency_loss
+from losses import masked_regression_loss, temporal_consistency_loss
 from models import build_model
+
+
+def make_blend_weights(patch_size: int) -> np.ndarray:
+    if patch_size <= 1:
+        return np.ones((patch_size, patch_size), dtype=np.float32)
+    ramp = 1.0 - np.abs(np.linspace(-1.0, 1.0, patch_size, dtype=np.float32))
+    ramp = np.clip(ramp, 0.05, None)
+    weight = np.outer(ramp, ramp)
+    return weight.astype(np.float32)
 
 
 def evaluate_model(model, loader, device):
     dataset = loader.dataset
     per_year = {}
+    blend_weights = make_blend_weights(dataset.patch_size)
     model.eval()
     with torch.no_grad():
         for batch in loader:
@@ -38,9 +48,9 @@ def evaluate_model(model, loader, device):
                         "pred_count": np.zeros((h, w), dtype=np.float32),
                     }
                 per_year[year]["pred_sum"][top: top + dataset.patch_size,
-                                           left: left + dataset.patch_size] += pred[idx]
+                                           left: left + dataset.patch_size] += pred[idx] * blend_weights
                 per_year[year]["pred_count"][top: top + dataset.patch_size,
-                                             left: left + dataset.patch_size] += 1.0
+                                             left: left + dataset.patch_size] += blend_weights
 
     y_true_all = []
     y_pred_all = []
@@ -193,7 +203,7 @@ def main():
             x = batch["x"].to(device)
             y = batch["y"].to(device)
             pred, feats = model(x, return_features=True)
-            sup_loss = masked_mse(pred, y)
+            sup_loss = masked_regression_loss(pred, y)
             total_loss = sup_loss
             cons_loss_val = torch.tensor(0.0, device=device)
             if pair_iter is not None:

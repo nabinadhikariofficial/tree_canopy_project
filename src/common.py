@@ -248,6 +248,10 @@ def normalize_channels(x: np.ndarray, stats: Dict[str, Dict[str, float]]) -> np.
     x = x.astype(np.float32, copy=True)
     for i, name in enumerate(CHANNEL_ORDER):
         x[i] = (x[i] - stats[name]["mean"]) / stats[name]["std"]
+        invalid = ~np.isfinite(x[i])
+        if np.any(invalid):
+            # After normalization, zero corresponds to the training-set mean.
+            x[i][invalid] = 0.0
     return x
 
 

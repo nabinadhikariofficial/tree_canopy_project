@@ -13,6 +13,35 @@ from common import CHANNEL_ORDER, discover_year_paths, get_torch_device, load_js
 from models import build_model, infer_vit_name_from_state_dict
 
 
+def pad_for_inference(x: np.ndarray, patch_size: int) -> tuple[np.ndarray, int]:
+    if patch_size <= 1:
+        return x, 0
+    pad = patch_size // 2
+    padded = np.pad(x, ((0, 0), (pad, pad), (pad, pad)), mode="reflect")
+    return padded, pad
+
+
+def make_blend_weights(patch_size: int) -> np.ndarray:
+    if patch_size <= 1:
+        return np.ones((patch_size, patch_size), dtype=np.float32)
+    ramp = 1.0 - np.abs(np.linspace(-1.0, 1.0, patch_size, dtype=np.float32))
+    ramp = np.clip(ramp, 0.05, None)
+    weight = np.outer(ramp, ramp)
+    return weight.astype(np.float32)
+
+
+def predict_patch(model, inp: torch.Tensor, tta: bool) -> np.ndarray:
+    preds = [model(inp)]
+    if tta:
+        flip_dims = [(-1,), (-2,), (-2, -1)]
+        for dims in flip_dims:
+            aug_inp = torch.flip(inp, dims=dims)
+            aug_pred = model(aug_inp)
+            preds.append(torch.flip(aug_pred, dims=dims))
+    pred = torch.stack(preds, dim=0).mean(dim=0)
+    return pred.squeeze().cpu().numpy()
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-root", type=str, required=True)
@@ -24,6 +53,8 @@ def main():
     parser.add_argument("--stride", type=int, default=96)
     parser.add_argument("--reference-year", type=int, default=None)
     parser.add_argument("--vit-name", type=str, default="vit_base_patch16_224")
+    parser.add_argument("--tta", action="store_true",
+                        help="Average predictions over horizontal/vertical flip test-time augmentations")
     args = parser.parse_args()
 
     stats = load_json(args.stats_path)
@@ -65,25 +96,29 @@ def main():
     model.load_state_dict(state)
     model.eval()
 
+    orig_h, orig_w = x.shape[1:]
+    x, pad = pad_for_inference(x, resolved_patch_size)
     h, w = x.shape[1:]
     pred_sum = np.zeros((h, w), dtype=np.float32)
     pred_count = np.zeros((h, w), dtype=np.float32)
+    blend_weights = make_blend_weights(resolved_patch_size)
 
     with torch.no_grad():
         for top, left in tqdm(sliding_windows(h, w, resolved_patch_size, args.stride)):
             patch = x[:, top: top + resolved_patch_size, left: left + resolved_patch_size]
             if patch.shape[1] != resolved_patch_size or patch.shape[2] != resolved_patch_size:
                 continue
-            if not np.isfinite(patch).all():
-                continue
             inp = torch.from_numpy(patch[None]).float().to(device)
-            out = model(inp).squeeze().cpu().numpy()
-            pred_sum[top: top + resolved_patch_size, left: left + resolved_patch_size] += out
-            pred_count[top: top + resolved_patch_size, left: left + resolved_patch_size] += 1.0
+            out = predict_patch(model, inp, args.tta)
+            pred_sum[top: top + resolved_patch_size, left: left + resolved_patch_size] += out * blend_weights
+            pred_count[top: top + resolved_patch_size, left: left + resolved_patch_size] += blend_weights
 
     pred = np.full((h, w), np.nan, dtype=np.float32)
     valid = pred_count > 0
     pred[valid] = pred_sum[valid] / pred_count[valid]
+    if pad > 0:
+        pred = pred[pad: pad + orig_h, pad: pad + orig_w]
+        valid = valid[pad: pad + orig_h, pad: pad + orig_w]
     pred[valid] = np.clip(pred[valid] * 100.0, 0.0, 100.0)
 
     profile = meta.copy()
