@@ -1,0 +1,13 @@
+{
+  "r2": 0.5465096465509565,
+  "mae": 20.91863311293757,
+  "rmse": 31.053108431545752,
+  "feature_names": [
+    "nlcd",
+    "ndvi",
+    "lst",
+    "tmean"
+  ],
+  "reference_year": 2015,
+  "num_eval_pixels": 533248
+}
