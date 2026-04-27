@@ -1,0 +1,14 @@
+{
+  "r2": 0.5711218816309982,
+  "mae": 19.87561787940621,
+  "rmse": 30.198682602248812,
+  "feature_names": [
+    "nlcd",
+    "landcover",
+    "ndvi",
+    "lst",
+    "tmean"
+  ],
+  "reference_year": 2015,
+  "num_eval_pixels": 533248
+}
