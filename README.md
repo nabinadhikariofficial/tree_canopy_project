@@ -166,8 +166,11 @@ Use `--model geo_vit` with one of the local Prithvi checkpoints:
 
 - `model_prithivi_weights/Prithvi_EO_V2_tiny_TL.pt`
 - `model_prithivi_weights/Prithvi_EO_V2_100M_TL.pt`
+- `model_prithivi_weights/Prithvi_EO_V2_300M.pt`
 
-The code now auto-detects the matching ViT backbone for these checkpoints, so you do not need to set `--vit-name` manually.
+The code now auto-detects the matching ViT backbone for these checkpoints, including the 300M variant, so you do not need to set `--vit-name` manually.
+
+The SLURM pipeline in `scripts/run_full_pipeline.slurm` now runs both the 100M and 300M Prithvi variants by default, writing separate outputs under `prithvi_100m_2023`, `prithvi_100m_consistency_2023`, `prithvi_300m_2023`, and `prithvi_300m_consistency_2023`.
 
 ### Prithvi Tiny Example
 
@@ -200,6 +203,25 @@ python src/train_deep.py \
   --output-dir runs/prithvi_100m_2023 \
   --model geo_vit \
   --pretrained-checkpoint model_prithivi_weights/Prithvi_EO_V2_100M_TL.pt \
+  --epochs 40 \
+  --batch-size 8 \
+  --patch-size 128 \
+  --num-workers 4 \
+  --consistency-weight 0.0
+```
+
+### Prithvi 300M Example
+
+```bash
+python src/train_deep.py \
+  --data-root data \
+  --train-years 2015 2016 2017 2018 2019 2020 2021 2022 \
+  --supervised-years 2015 2021 \
+  --consistency-years 2015 2016 2017 2018 2019 2020 2021 2022 \
+  --test-year 2023 \
+  --output-dir runs/prithvi_300m_2023 \
+  --model geo_vit \
+  --pretrained-checkpoint model_prithivi_weights/Prithvi_EO_V2_300M.pt \
   --epochs 40 \
   --batch-size 8 \
   --patch-size 128 \

@@ -13,6 +13,19 @@ def run(cmd: list[str]):
     subprocess.run(cmd, check=True)
 
 
+def infer_prithvi_variant_name(checkpoint_path: str | None) -> str:
+    if not checkpoint_path:
+        return "prithvi"
+    stem = Path(checkpoint_path).stem.lower()
+    if "300m" in stem:
+        return "prithvi_300m"
+    if "100m" in stem:
+        return "prithvi_100m"
+    if "tiny" in stem:
+        return "prithvi_tiny"
+    return "prithvi"
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-root", required=True)
@@ -91,9 +104,13 @@ def main():
         "--change-gamma", "3.0",
     ])
 
+    prithvi_variant = infer_prithvi_variant_name(args.prithvi_checkpoint)
+    vit_baseline_name = f"{prithvi_variant}_baseline"
+    vit_consistency_name = f"{prithvi_variant}_consistency"
+
     vit_cmd = [
         sys.executable, "src/train_deep.py", *common,
-        "--output-dir", str(out / "vit_baseline"),
+        "--output-dir", str(out / vit_baseline_name),
         "--model", "geo_vit",
         "--consistency-weight", "0.0",
     ]
@@ -103,7 +120,7 @@ def main():
 
     vit_cons_cmd = [
         sys.executable, "src/train_deep.py", *common,
-        "--output-dir", str(out / "vit_consistency"),
+        "--output-dir", str(out / vit_consistency_name),
         "--model", "geo_vit",
         "--consistency-weight", "0.2",
         "--change-gamma", "3.0",
@@ -113,7 +130,7 @@ def main():
     run(vit_cons_cmd)
 
     summary = {}
-    for name in ["rf", "unet_baseline", "unet_consistency", "vit_baseline", "vit_consistency"]:
+    for name in ["rf", "unet_baseline", "unet_consistency", vit_baseline_name, vit_consistency_name]:
         metric_path = out / name / ("metrics.json" if name == "rf" else "test_metrics.json")
         if metric_path.exists():
             summary[name] = json.loads(metric_path.read_text())

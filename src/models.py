@@ -50,6 +50,8 @@ def infer_vit_name_from_state_dict(state: dict, fallback: str) -> str:
         return "vit_tiny_patch16_224"
     if embed_dim == 768:
         return "vit_base_patch16_224"
+    if embed_dim == 1024:
+        return "vit_large_patch16_224"
     return fallback
 
 

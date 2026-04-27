@@ -38,7 +38,8 @@ NUM_WORKERS="${NUM_WORKERS:-4}"
 SEED="${SEED:-42}"
 
 RF_SAMPLE_FRACTION="${RF_SAMPLE_FRACTION:-0.05}"
-PRITHVI_CKPT="${PRITHVI_CKPT:-$PROJECT_DIR/model_prithivi_weights/Prithvi_EO_V2_100M_TL.pt}"
+PRITHVI_100M_CKPT="${PRITHVI_100M_CKPT:-$PROJECT_DIR/model_prithivi_weights/Prithvi_EO_V2_100M_TL.pt}"
+PRITHVI_300M_CKPT="${PRITHVI_300M_CKPT:-$PROJECT_DIR/model_prithivi_weights/Prithvi_EO_V2_300M.pt}"
 
 mkdir -p "$LOG_ROOT" "$RUNS_ROOT"
 
@@ -76,9 +77,110 @@ join_by_space() {
   echo "$*"
 }
 
+infer_prithvi_variant_tag() {
+  local ckpt_name
+  ckpt_name="$(basename "$1")"
+  ckpt_name="${ckpt_name,,}"
+  if [[ "$ckpt_name" == *"300m"* ]]; then
+    echo "prithvi_300m"
+  elif [[ "$ckpt_name" == *"100m"* ]]; then
+    echo "prithvi_100m"
+  elif [[ "$ckpt_name" == *"tiny"* ]]; then
+    echo "prithvi_tiny"
+  else
+    echo "prithvi"
+  fi
+}
+
 TRAIN_YEARS_STR="$(join_by_space "${TRAIN_YEARS[@]}")"
 SUPERVISED_YEARS_STR="$(join_by_space "${SUPERVISED_YEARS[@]}")"
 CONSISTENCY_YEARS_STR="$(join_by_space "${CONSISTENCY_YEARS[@]}")"
+
+run_prithvi_variant() {
+  local prithvi_ckpt="$1"
+  local prithvi_variant_tag
+  local prithvi_base_dir
+  local prithvi_consistency_dir
+
+  prithvi_variant_tag="$(infer_prithvi_variant_tag "$prithvi_ckpt")"
+  prithvi_base_dir="$RUNS_ROOT/${prithvi_variant_tag}_2023"
+  prithvi_consistency_dir="$RUNS_ROOT/${prithvi_variant_tag}_consistency_2023"
+
+  echo "== ${prithvi_variant_tag} baseline =="
+  "$PYTHON_BIN" src/train_deep.py \
+    --data-root "$DATA_ROOT" \
+    --train-years $TRAIN_YEARS_STR \
+    --supervised-years $SUPERVISED_YEARS_STR \
+    --consistency-years $CONSISTENCY_YEARS_STR \
+    --test-year "$TEST_YEAR" \
+    --reference-year "$REFERENCE_YEAR" \
+    --output-dir "$prithvi_base_dir" \
+    --model geo_vit \
+    --pretrained-checkpoint "$prithvi_ckpt" \
+    --epochs "$EPOCHS" \
+    --batch-size "$BATCH_SIZE" \
+    --patch-size "$PATCH_SIZE" \
+    --stride "$STRIDE" \
+    --train-stride "$TRAIN_STRIDE" \
+    --eval-stride "$EVAL_STRIDE" \
+    --block-size "$BLOCK_SIZE" \
+    --num-workers "$NUM_WORKERS" \
+    --seed "$SEED" \
+    --consistency-weight 0.0
+
+  "$PYTHON_BIN" src/predict_raster.py \
+    --data-root "$DATA_ROOT" \
+    --year "$TEST_YEAR" \
+    --checkpoint "$prithvi_base_dir/best.pt" \
+    --stats-path "$prithvi_base_dir/stats.json" \
+    --output-path "$prithvi_base_dir/pred_${TEST_YEAR}.tif" \
+    --stride "$INFER_STRIDE" \
+    --tta
+
+  "$PYTHON_BIN" src/evaluate_predictions.py \
+    --pred-path "$prithvi_base_dir/pred_${TEST_YEAR}.tif" \
+    --target-path "$DATA_ROOT/$TEST_YEAR/Tree_${TEST_YEAR}.tif" \
+    --reference-path "$DATA_ROOT/$TEST_YEAR/${TEST_YEAR}_Tree_NLCD.tif" \
+    --output-dir "$prithvi_base_dir/eval_${TEST_YEAR}"
+
+  echo "== ${prithvi_variant_tag} + consistency =="
+  "$PYTHON_BIN" src/train_deep.py \
+    --data-root "$DATA_ROOT" \
+    --train-years $TRAIN_YEARS_STR \
+    --supervised-years $SUPERVISED_YEARS_STR \
+    --consistency-years $CONSISTENCY_YEARS_STR \
+    --test-year "$TEST_YEAR" \
+    --reference-year "$REFERENCE_YEAR" \
+    --output-dir "$prithvi_consistency_dir" \
+    --model geo_vit \
+    --pretrained-checkpoint "$prithvi_ckpt" \
+    --epochs "$EPOCHS" \
+    --batch-size "$BATCH_SIZE" \
+    --patch-size "$PATCH_SIZE" \
+    --stride "$STRIDE" \
+    --train-stride "$TRAIN_STRIDE" \
+    --eval-stride "$EVAL_STRIDE" \
+    --block-size "$BLOCK_SIZE" \
+    --num-workers "$NUM_WORKERS" \
+    --seed "$SEED" \
+    --consistency-weight 0.2 \
+    --change-gamma 3.0
+
+  "$PYTHON_BIN" src/predict_raster.py \
+    --data-root "$DATA_ROOT" \
+    --year "$TEST_YEAR" \
+    --checkpoint "$prithvi_consistency_dir/best.pt" \
+    --stats-path "$prithvi_consistency_dir/stats.json" \
+    --output-path "$prithvi_consistency_dir/pred_${TEST_YEAR}.tif" \
+    --stride "$INFER_STRIDE" \
+    --tta
+
+  "$PYTHON_BIN" src/evaluate_predictions.py \
+    --pred-path "$prithvi_consistency_dir/pred_${TEST_YEAR}.tif" \
+    --target-path "$DATA_ROOT/$TEST_YEAR/Tree_${TEST_YEAR}.tif" \
+    --reference-path "$DATA_ROOT/$TEST_YEAR/${TEST_YEAR}_Tree_NLCD.tif" \
+    --output-dir "$prithvi_consistency_dir/eval_${TEST_YEAR}"
+}
 
 echo "== Prepare dataset =="
 "$PYTHON_BIN" src/prepare_dataset.py \
@@ -185,79 +287,7 @@ echo "== U-Net + consistency =="
   --reference-path "$DATA_ROOT/$TEST_YEAR/${TEST_YEAR}_Tree_NLCD.tif" \
   --output-dir "$RUNS_ROOT/unet_consistency_2023/eval_${TEST_YEAR}"
 
-echo "== Prithvi 100M baseline =="
-"$PYTHON_BIN" src/train_deep.py \
-  --data-root "$DATA_ROOT" \
-  --train-years $TRAIN_YEARS_STR \
-  --supervised-years $SUPERVISED_YEARS_STR \
-  --consistency-years $CONSISTENCY_YEARS_STR \
-  --test-year "$TEST_YEAR" \
-  --reference-year "$REFERENCE_YEAR" \
-  --output-dir "$RUNS_ROOT/prithvi_100m_2023" \
-  --model geo_vit \
-  --pretrained-checkpoint "$PRITHVI_CKPT" \
-  --epochs "$EPOCHS" \
-  --batch-size "$BATCH_SIZE" \
-  --patch-size "$PATCH_SIZE" \
-  --stride "$STRIDE" \
-  --train-stride "$TRAIN_STRIDE" \
-  --eval-stride "$EVAL_STRIDE" \
-  --block-size "$BLOCK_SIZE" \
-  --num-workers "$NUM_WORKERS" \
-  --seed "$SEED" \
-  --consistency-weight 0.0
-
-"$PYTHON_BIN" src/predict_raster.py \
-  --data-root "$DATA_ROOT" \
-  --year "$TEST_YEAR" \
-  --checkpoint "$RUNS_ROOT/prithvi_100m_2023/best.pt" \
-  --stats-path "$RUNS_ROOT/prithvi_100m_2023/stats.json" \
-  --output-path "$RUNS_ROOT/prithvi_100m_2023/pred_${TEST_YEAR}.tif" \
-  --stride "$INFER_STRIDE" \
-  --tta
-
-"$PYTHON_BIN" src/evaluate_predictions.py \
-  --pred-path "$RUNS_ROOT/prithvi_100m_2023/pred_${TEST_YEAR}.tif" \
-  --target-path "$DATA_ROOT/$TEST_YEAR/Tree_${TEST_YEAR}.tif" \
-  --reference-path "$DATA_ROOT/$TEST_YEAR/${TEST_YEAR}_Tree_NLCD.tif" \
-  --output-dir "$RUNS_ROOT/prithvi_100m_2023/eval_${TEST_YEAR}"
-
-echo "== Prithvi 100M + consistency =="
-"$PYTHON_BIN" src/train_deep.py \
-  --data-root "$DATA_ROOT" \
-  --train-years $TRAIN_YEARS_STR \
-  --supervised-years $SUPERVISED_YEARS_STR \
-  --consistency-years $CONSISTENCY_YEARS_STR \
-  --test-year "$TEST_YEAR" \
-  --reference-year "$REFERENCE_YEAR" \
-  --output-dir "$RUNS_ROOT/prithvi_consistency_2023" \
-  --model geo_vit \
-  --pretrained-checkpoint "$PRITHVI_CKPT" \
-  --epochs "$EPOCHS" \
-  --batch-size "$BATCH_SIZE" \
-  --patch-size "$PATCH_SIZE" \
-  --stride "$STRIDE" \
-  --train-stride "$TRAIN_STRIDE" \
-  --eval-stride "$EVAL_STRIDE" \
-  --block-size "$BLOCK_SIZE" \
-  --num-workers "$NUM_WORKERS" \
-  --seed "$SEED" \
-  --consistency-weight 0.2 \
-  --change-gamma 3.0
-
-"$PYTHON_BIN" src/predict_raster.py \
-  --data-root "$DATA_ROOT" \
-  --year "$TEST_YEAR" \
-  --checkpoint "$RUNS_ROOT/prithvi_consistency_2023/best.pt" \
-  --stats-path "$RUNS_ROOT/prithvi_consistency_2023/stats.json" \
-  --output-path "$RUNS_ROOT/prithvi_consistency_2023/pred_${TEST_YEAR}.tif" \
-  --stride "$INFER_STRIDE" \
-  --tta
-
-"$PYTHON_BIN" src/evaluate_predictions.py \
-  --pred-path "$RUNS_ROOT/prithvi_consistency_2023/pred_${TEST_YEAR}.tif" \
-  --target-path "$DATA_ROOT/$TEST_YEAR/Tree_${TEST_YEAR}.tif" \
-  --reference-path "$DATA_ROOT/$TEST_YEAR/${TEST_YEAR}_Tree_NLCD.tif" \
-  --output-dir "$RUNS_ROOT/prithvi_consistency_2023/eval_${TEST_YEAR}"
+run_prithvi_variant "$PRITHVI_100M_CKPT"
+run_prithvi_variant "$PRITHVI_300M_CKPT"
 
 echo "Pipeline finished successfully."
