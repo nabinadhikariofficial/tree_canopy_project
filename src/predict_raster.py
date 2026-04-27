@@ -42,6 +42,19 @@ def predict_patch(model, inp: torch.Tensor, tta: bool) -> np.ndarray:
     return pred.squeeze().cpu().numpy()
 
 
+def apply_calibration(pred_percent: np.ndarray, calibration: dict | None) -> np.ndarray:
+    if calibration is None or calibration.get("mode", "identity") == "identity":
+        return pred_percent
+    mode = calibration["mode"]
+    if mode == "bias":
+        return pred_percent + float(calibration.get("offset", 0.0))
+    if mode == "linear":
+        slope = float(calibration.get("slope", 1.0))
+        intercept = float(calibration.get("intercept", 0.0))
+        return pred_percent * slope + intercept
+    raise ValueError(f"Unknown calibration mode: {mode}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-root", type=str, required=True)
@@ -50,7 +63,7 @@ def main():
     parser.add_argument("--stats-path", type=str, required=True)
     parser.add_argument("--output-path", type=str, required=True)
     parser.add_argument("--patch-size", type=int, default=128)
-    parser.add_argument("--stride", type=int, default=96)
+    parser.add_argument("--stride", type=int, default=64)
     parser.add_argument("--reference-year", type=int, default=None)
     parser.add_argument("--vit-name", type=str, default="vit_base_patch16_224")
     parser.add_argument("--tta", action="store_true",
@@ -69,6 +82,7 @@ def main():
         "vit_name",
         ckpt.get("resolved_vit_name", args.vit_name) if isinstance(ckpt, dict) else args.vit_name,
     )
+    calibration = ckpt.get("calibration") if isinstance(ckpt, dict) else None
     resolved_vit_name = infer_vit_name_from_state_dict(
         state, resolved_vit_name)
     reference_year = args.reference_year if args.reference_year is not None else model_args.get(
@@ -119,7 +133,9 @@ def main():
     if pad > 0:
         pred = pred[pad: pad + orig_h, pad: pad + orig_w]
         valid = valid[pad: pad + orig_h, pad: pad + orig_w]
-    pred[valid] = np.clip(pred[valid] * 100.0, 0.0, 100.0)
+    pred[valid] = pred[valid] * 100.0
+    pred[valid] = apply_calibration(pred[valid], calibration)
+    pred[valid] = np.clip(pred[valid], 0.0, 100.0)
 
     profile = meta.copy()
     profile.update(dtype="float32", count=1, compress="lzw", nodata=np.nan)

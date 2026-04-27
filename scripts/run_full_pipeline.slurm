@@ -13,9 +13,10 @@ set -euo pipefail
 
 PROJECT_DIR="${PROJECT_DIR:-$SLURM_SUBMIT_DIR}"
 CONDA_ENV_NAME="${CONDA_ENV_NAME:-dl}"
+RUN_TAG="${RUN_TAG:-$(date +%Y%m%d_%H%M%S)}"
 
 DATA_ROOT="${DATA_ROOT:-$PROJECT_DIR/data}"
-RUNS_ROOT="${RUNS_ROOT:-$PROJECT_DIR/runs}"
+RUNS_ROOT="${RUNS_ROOT:-$PROJECT_DIR/runs/$RUN_TAG}"
 LOG_ROOT="${LOG_ROOT:-$PROJECT_DIR/logs}"
 
 REFERENCE_YEAR="${REFERENCE_YEAR:-2015}"
@@ -29,7 +30,9 @@ EPOCHS="${EPOCHS:-40}"
 BATCH_SIZE="${BATCH_SIZE:-8}"
 PATCH_SIZE="${PATCH_SIZE:-128}"
 STRIDE="${STRIDE:-128}"
-INFER_STRIDE="${INFER_STRIDE:-96}"
+TRAIN_STRIDE="${TRAIN_STRIDE:-64}"
+EVAL_STRIDE="${EVAL_STRIDE:-64}"
+INFER_STRIDE="${INFER_STRIDE:-64}"
 BLOCK_SIZE="${BLOCK_SIZE:-256}"
 NUM_WORKERS="${NUM_WORKERS:-4}"
 SEED="${SEED:-42}"
@@ -53,6 +56,7 @@ fi
 echo "Project dir: $PROJECT_DIR"
 echo "Python: $PYTHON_BIN"
 echo "Conda env: $CONDA_ENV_NAME"
+echo "Run tag: $RUN_TAG"
 echo "Data root: $DATA_ROOT"
 echo "Runs root: $RUNS_ROOT"
 echo "Reference year: $REFERENCE_YEAR"
@@ -122,6 +126,8 @@ echo "== U-Net baseline =="
   --batch-size "$BATCH_SIZE" \
   --patch-size "$PATCH_SIZE" \
   --stride "$STRIDE" \
+  --train-stride "$TRAIN_STRIDE" \
+  --eval-stride "$EVAL_STRIDE" \
   --block-size "$BLOCK_SIZE" \
   --num-workers "$NUM_WORKERS" \
   --seed "$SEED" \
@@ -133,7 +139,8 @@ echo "== U-Net baseline =="
   --checkpoint "$RUNS_ROOT/unet_2023/best.pt" \
   --stats-path "$RUNS_ROOT/unet_2023/stats.json" \
   --output-path "$RUNS_ROOT/unet_2023/pred_${TEST_YEAR}.tif" \
-  --stride "$INFER_STRIDE"
+  --stride "$INFER_STRIDE" \
+  --tta
 
 "$PYTHON_BIN" src/evaluate_predictions.py \
   --pred-path "$RUNS_ROOT/unet_2023/pred_${TEST_YEAR}.tif" \
@@ -155,6 +162,8 @@ echo "== U-Net + consistency =="
   --batch-size "$BATCH_SIZE" \
   --patch-size "$PATCH_SIZE" \
   --stride "$STRIDE" \
+  --train-stride "$TRAIN_STRIDE" \
+  --eval-stride "$EVAL_STRIDE" \
   --block-size "$BLOCK_SIZE" \
   --num-workers "$NUM_WORKERS" \
   --seed "$SEED" \
@@ -167,7 +176,8 @@ echo "== U-Net + consistency =="
   --checkpoint "$RUNS_ROOT/unet_consistency_2023/best.pt" \
   --stats-path "$RUNS_ROOT/unet_consistency_2023/stats.json" \
   --output-path "$RUNS_ROOT/unet_consistency_2023/pred_${TEST_YEAR}.tif" \
-  --stride "$INFER_STRIDE"
+  --stride "$INFER_STRIDE" \
+  --tta
 
 "$PYTHON_BIN" src/evaluate_predictions.py \
   --pred-path "$RUNS_ROOT/unet_consistency_2023/pred_${TEST_YEAR}.tif" \
@@ -190,6 +200,8 @@ echo "== Prithvi 100M baseline =="
   --batch-size "$BATCH_SIZE" \
   --patch-size "$PATCH_SIZE" \
   --stride "$STRIDE" \
+  --train-stride "$TRAIN_STRIDE" \
+  --eval-stride "$EVAL_STRIDE" \
   --block-size "$BLOCK_SIZE" \
   --num-workers "$NUM_WORKERS" \
   --seed "$SEED" \
@@ -201,7 +213,8 @@ echo "== Prithvi 100M baseline =="
   --checkpoint "$RUNS_ROOT/prithvi_100m_2023/best.pt" \
   --stats-path "$RUNS_ROOT/prithvi_100m_2023/stats.json" \
   --output-path "$RUNS_ROOT/prithvi_100m_2023/pred_${TEST_YEAR}.tif" \
-  --stride "$INFER_STRIDE"
+  --stride "$INFER_STRIDE" \
+  --tta
 
 "$PYTHON_BIN" src/evaluate_predictions.py \
   --pred-path "$RUNS_ROOT/prithvi_100m_2023/pred_${TEST_YEAR}.tif" \
@@ -224,6 +237,8 @@ echo "== Prithvi 100M + consistency =="
   --batch-size "$BATCH_SIZE" \
   --patch-size "$PATCH_SIZE" \
   --stride "$STRIDE" \
+  --train-stride "$TRAIN_STRIDE" \
+  --eval-stride "$EVAL_STRIDE" \
   --block-size "$BLOCK_SIZE" \
   --num-workers "$NUM_WORKERS" \
   --seed "$SEED" \
@@ -236,7 +251,8 @@ echo "== Prithvi 100M + consistency =="
   --checkpoint "$RUNS_ROOT/prithvi_consistency_2023/best.pt" \
   --stats-path "$RUNS_ROOT/prithvi_consistency_2023/stats.json" \
   --output-path "$RUNS_ROOT/prithvi_consistency_2023/pred_${TEST_YEAR}.tif" \
-  --stride "$INFER_STRIDE"
+  --stride "$INFER_STRIDE" \
+  --tta
 
 "$PYTHON_BIN" src/evaluate_predictions.py \
   --pred-path "$RUNS_ROOT/prithvi_consistency_2023/pred_${TEST_YEAR}.tif" \

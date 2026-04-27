@@ -44,7 +44,7 @@ class MultiYearRasterStore:
 class PatchDataset(Dataset):
     def __init__(self, store: MultiYearRasterStore, years: Sequence[int], split: str,
                  patch_size: int = 128, stride: int = 128, block_size: int = 256,
-                 require_labels: bool = True, seed: int = 42):
+                 require_labels: bool = True, seed: int = 42, augment: bool = False):
         self.store = store
         self.years = list(years)
         self.split = split
@@ -53,6 +53,7 @@ class PatchDataset(Dataset):
         self.block_size = block_size
         self.require_labels = require_labels
         self.seed = seed
+        self.augment = augment
         self.items: List[PatchIndex] = []
         self._build_index()
 
@@ -84,6 +85,22 @@ class PatchDataset(Dataset):
     def __len__(self):
         return len(self.items)
 
+    def _apply_augmentation(self, x_t: torch.Tensor, y_t: Optional[torch.Tensor]):
+        k = int(torch.randint(0, 4, (1,)).item())
+        if k:
+            x_t = torch.rot90(x_t, k, dims=(-2, -1))
+            if y_t is not None:
+                y_t = torch.rot90(y_t, k, dims=(-2, -1))
+        if bool(torch.rand(1).item() < 0.5):
+            x_t = torch.flip(x_t, dims=(-1,))
+            if y_t is not None:
+                y_t = torch.flip(y_t, dims=(-1,))
+        if bool(torch.rand(1).item() < 0.5):
+            x_t = torch.flip(x_t, dims=(-2,))
+            if y_t is not None:
+                y_t = torch.flip(y_t, dims=(-2,))
+        return x_t, y_t
+
     def __getitem__(self, idx: int):
         item = self.items[idx]
         x = self.store.inputs[item.year][:, item.top:item.top +
@@ -91,6 +108,7 @@ class PatchDataset(Dataset):
         y = self.store.targets[item.year]
 
         x_t = torch.from_numpy(x).float()
+        y_t = None
         out = {
             "x": x_t,
             "year": torch.tensor(item.year, dtype=torch.long),
@@ -101,7 +119,12 @@ class PatchDataset(Dataset):
             y = y / 100.0
             y_patch = y[item.top:item.top + self.patch_size,
                         item.left:item.left + self.patch_size]
-            out["y"] = torch.from_numpy(y_patch[None, ...]).float()
+            y_t = torch.from_numpy(y_patch[None, ...]).float()
+        if self.augment and self.split == "train":
+            x_t, y_t = self._apply_augmentation(x_t, y_t)
+        out["x"] = x_t
+        if y_t is not None:
+            out["y"] = y_t
         return out
 
 

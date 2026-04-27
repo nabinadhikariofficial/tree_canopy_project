@@ -24,6 +24,21 @@ The intended workflow is:
 4. Predict a full raster for a target year.
 5. Evaluate predictions against the held-out canopy reference.
 
+## Recommended Final-Project Configuration
+
+Based on the current results, the strongest path for the final project is the U-Net family, not the Prithvi runs. The recommended settings are:
+
+- use `--model unet`
+- use temporal consistency across `2015..2022`
+- use denser supervised patch extraction with `--train-stride 64`
+- evaluate with `--eval-stride 64`
+- keep train-time augmentation enabled
+- predict full rasters with `--stride 64 --tta`
+
+The training pipeline now also fits a validation-based calibration model automatically and stores it in `best.pt` plus `calibration.json`. Full-raster inference applies that calibration automatically when it is present.
+
+Every new launcher-driven run now goes into a fresh timestamped folder using the current date and time, so old results are preserved by default.
+
 ## Expected Dataset Layout
 
 ```text

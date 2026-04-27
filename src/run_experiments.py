@@ -4,6 +4,7 @@ import argparse
 import json
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
 
@@ -24,15 +25,20 @@ def main():
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--patch-size", type=int, default=128)
     parser.add_argument("--stride", type=int, default=128)
+    parser.add_argument("--train-stride", type=int, default=64)
+    parser.add_argument("--eval-stride", type=int, default=64)
     parser.add_argument("--block-size", type=int, default=256)
     parser.add_argument("--num-workers", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--reference-year", type=int, default=None)
     parser.add_argument("--prithvi-checkpoint", type=str, default=None)
+    parser.add_argument("--run-name", type=str, default=None)
     args = parser.parse_args()
 
-    out = Path(args.output_root)
+    run_name = args.run_name or datetime.now().strftime("%Y%m%d_%H%M%S")
+    out = Path(args.output_root) / run_name
     out.mkdir(parents=True, exist_ok=True)
+    print(f"Saving this run under {out}")
 
     supervised_years = args.supervised_years if args.supervised_years is not None else args.train_years
     consistency_years = args.consistency_years if args.consistency_years is not None else args.train_years
@@ -45,6 +51,8 @@ def main():
         "--batch-size", str(args.batch_size),
         "--patch-size", str(args.patch_size),
         "--stride", str(args.stride),
+        "--train-stride", str(args.train_stride),
+        "--eval-stride", str(args.eval_stride),
         "--block-size", str(args.block_size),
         "--num-workers", str(args.num_workers),
         "--seed", str(args.seed),

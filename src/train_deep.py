@@ -23,7 +23,20 @@ def make_blend_weights(patch_size: int) -> np.ndarray:
     return weight.astype(np.float32)
 
 
-def evaluate_model(model, loader, device):
+def apply_calibration(pred_percent: np.ndarray, calibration: dict | None) -> np.ndarray:
+    if calibration is None or calibration.get("mode", "identity") == "identity":
+        return pred_percent
+    mode = calibration["mode"]
+    if mode == "bias":
+        return pred_percent + float(calibration.get("offset", 0.0))
+    if mode == "linear":
+        slope = float(calibration.get("slope", 1.0))
+        intercept = float(calibration.get("intercept", 0.0))
+        return pred_percent * slope + intercept
+    raise ValueError(f"Unknown calibration mode: {mode}")
+
+
+def collect_eval_arrays(model, loader, device, calibration: dict | None = None):
     dataset = loader.dataset
     per_year = {}
     blend_weights = make_blend_weights(dataset.patch_size)
@@ -61,18 +74,58 @@ def evaluate_model(model, loader, device):
         pred = np.full(target.shape, np.nan, dtype=np.float32)
         valid = rec["pred_count"] > 0
         pred[valid] = rec["pred_sum"][valid] / rec["pred_count"][valid]
+        pred = pred * 100.0
+        pred = apply_calibration(pred, calibration)
+        pred = np.clip(pred, 0.0, 100.0)
         split_mask = get_split_mask(
             target.shape[0], target.shape[1], dataset.split, dataset.block_size, dataset.seed)
         mask = valid & split_mask & np.isfinite(target)
         if not np.any(mask):
             continue
         y_true_all.append(target[mask])
-        y_pred_all.append(pred[mask] * 100.0)
+        y_pred_all.append(pred[mask])
 
     if not y_true_all:
         raise RuntimeError("No valid evaluation pixels found for the requested split")
 
-    return canopy_metrics(np.concatenate(y_true_all), np.concatenate(y_pred_all))
+    return np.concatenate(y_true_all), np.concatenate(y_pred_all)
+
+
+def evaluate_model(model, loader, device, calibration: dict | None = None):
+    y_true, y_pred = collect_eval_arrays(
+        model, loader, device, calibration=calibration)
+    return canopy_metrics(y_true, y_pred)
+
+
+def fit_calibration(model, loader, device):
+    y_true, y_pred = collect_eval_arrays(model, loader, device, calibration=None)
+
+    raw_metrics = canopy_metrics(y_true, y_pred)
+    candidates = [
+        {"mode": "identity"},
+        {"mode": "bias", "offset": float(np.mean(y_true - y_pred))},
+    ]
+
+    X = np.column_stack([y_pred, np.ones_like(y_pred)])
+    slope, intercept = np.linalg.lstsq(X, y_true, rcond=None)[0]
+    candidates.append({
+        "mode": "linear",
+        "slope": float(np.clip(slope, 0.75, 1.25)),
+        "intercept": float(np.clip(intercept, -15.0, 15.0)),
+    })
+
+    best_cal = candidates[0]
+    best_metrics = raw_metrics
+    for calibration in candidates[1:]:
+        cal_pred = np.clip(apply_calibration(y_pred, calibration), 0.0, 100.0)
+        cal_metrics = canopy_metrics(y_true, cal_pred)
+        if cal_metrics["rmse"] < best_metrics["rmse"]:
+            best_cal = calibration
+            best_metrics = cal_metrics
+
+    best_cal["val_metrics_raw"] = raw_metrics
+    best_cal["val_metrics_calibrated"] = best_metrics
+    return best_cal
 
 
 def main():
@@ -91,6 +144,8 @@ def main():
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--patch-size", type=int, default=128)
     parser.add_argument("--stride", type=int, default=128)
+    parser.add_argument("--train-stride", type=int, default=None)
+    parser.add_argument("--eval-stride", type=int, default=None)
     parser.add_argument("--block-size", type=int, default=256)
     parser.add_argument("--num-workers", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
@@ -100,6 +155,7 @@ def main():
     parser.add_argument("--pretrained-checkpoint", type=str, default=None)
     parser.add_argument("--consistency-weight", type=float, default=0.0)
     parser.add_argument("--change-gamma", type=float, default=3.0)
+    parser.add_argument("--augment", action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args()
 
     out = Path(args.output_dir)
@@ -109,6 +165,8 @@ def main():
     supervised_years = args.supervised_years if args.supervised_years is not None else args.train_years
     consistency_years = args.consistency_years if args.consistency_years is not None else args.train_years
     reference_year = args.reference_year if args.reference_year is not None else args.train_years[0]
+    train_stride = args.train_stride if args.train_stride is not None else args.stride
+    eval_stride = args.eval_stride if args.eval_stride is not None else args.stride
     ref_path = resolve_reference_path(args.data_root, reference_year)
     all_store_years = list(dict.fromkeys(
         list(args.train_years)
@@ -129,11 +187,12 @@ def main():
     store = MultiYearRasterStore(
         args.data_root, all_store_years, stats, aligned_dir=str(out / "aligned"), ref_path=ref_path)
     train_ds = PatchDataset(store, supervised_years, split="train", patch_size=args.patch_size,
-                            stride=args.stride, block_size=args.block_size, require_labels=True, seed=args.seed)
+                            stride=train_stride, block_size=args.block_size, require_labels=True,
+                            seed=args.seed, augment=args.augment)
     val_ds = PatchDataset(store, supervised_years, split="val", patch_size=args.patch_size,
-                          stride=args.stride, block_size=args.block_size, require_labels=True, seed=args.seed)
+                          stride=eval_stride, block_size=args.block_size, require_labels=True, seed=args.seed)
     test_ds = PatchDataset(store, [args.test_year], split="test", patch_size=args.patch_size,
-                           stride=args.stride, block_size=args.block_size, require_labels=True, seed=args.seed)
+                           stride=eval_stride, block_size=args.block_size, require_labels=True, seed=args.seed)
 
     device = get_torch_device()
     pin_memory = should_pin_memory(device)
@@ -143,13 +202,13 @@ def main():
     if len(consistency_years) >= 2 and args.consistency_weight > 0:
         if len(consistency_years) == 2:
             pair_train = PairConsistencyDataset(store, consistency_years[0], consistency_years[1], split="train",
-                                                patch_size=args.patch_size, stride=args.stride,
+                                                patch_size=args.patch_size, stride=train_stride,
                                                 block_size=args.block_size, seed=args.seed)
         else:
             year_pairs = list(
                 zip(consistency_years[:-1], consistency_years[1:]))
             pair_train = MultiPairConsistencyDataset(store, year_pairs=year_pairs, split="train",
-                                                     patch_size=args.patch_size, stride=args.stride,
+                                                     patch_size=args.patch_size, stride=train_stride,
                                                      block_size=args.block_size, seed=args.seed)
         pair_loader = DataLoader(pair_train, batch_size=args.batch_size, shuffle=True,
                                  num_workers=args.num_workers, pin_memory=pin_memory)
@@ -160,6 +219,9 @@ def main():
         "consistency_years": consistency_years,
         "test_year": args.test_year,
         "reference_year": reference_year,
+        "train_stride": train_stride,
+        "eval_stride": eval_stride,
+        "augment": args.augment,
         "num_train_patches": len(train_ds),
         "num_val_patches": len(val_ds),
         "num_test_patches": len(test_ds),
@@ -186,6 +248,8 @@ def main():
     resolved_args = vars(args).copy()
     resolved_args["reference_year"] = reference_year
     resolved_args["vit_name"] = getattr(model, "vit_name", args.vit_name)
+    resolved_args["train_stride"] = train_stride
+    resolved_args["eval_stride"] = eval_stride
 
     best_val = float("inf")
     best_path = out / "best.pt"
@@ -249,9 +313,17 @@ def main():
 
     ckpt = torch.load(best_path, map_location=device)
     model.load_state_dict(ckpt["model_state"])
-    test_metrics = evaluate_model(model, test_loader, device)
+    raw_test_metrics = evaluate_model(model, test_loader, device)
+    calibration = fit_calibration(model, val_loader, device)
+    test_metrics = evaluate_model(model, test_loader, device, calibration=calibration)
+    ckpt["calibration"] = calibration
+    torch.save(ckpt, best_path)
+    save_json(calibration, out / "calibration.json")
+    save_json(raw_test_metrics, out / "test_metrics_raw.json")
     save_json(test_metrics, out / "test_metrics.json")
-    print(f"Test metrics: {test_metrics}")
+    print(f"Raw test metrics: {raw_test_metrics}")
+    print(f"Calibration: {calibration}")
+    print(f"Calibrated test metrics: {test_metrics}")
 
 
 if __name__ == "__main__":
