@@ -30,7 +30,7 @@ def main():
     for year in args.years:
         yp = discover_year_paths(args.data_root, year)
         year_rec = {}
-        for key in ["nlcd", "ndvi", "lst", "ppt", "tmin", "tmean", "tmax"]:
+        for key in ["nlcd", "landcover", "ndvi", "lst", "ppt", "tmin", "tmean", "tmax"]:
             path = getattr(yp, key)
             year_rec[key] = read_profile(path) if path else None
         if yp.label:

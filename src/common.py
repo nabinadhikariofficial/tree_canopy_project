@@ -14,7 +14,8 @@ from rasterio.enums import Resampling
 from rasterio.warp import reproject
 
 PRISM_KEY = "tmean"
-CHANNEL_ORDER = ["nlcd", "ndvi", "lst", PRISM_KEY]
+LANDCOVER_KEY = "landcover"
+CHANNEL_ORDER = ["nlcd", LANDCOVER_KEY, "ndvi", "lst", PRISM_KEY]
 
 
 def set_seed(seed: int = 42) -> None:
@@ -51,6 +52,7 @@ def should_pin_memory(device) -> bool:
 class YearPaths:
     year: int
     nlcd: str
+    landcover: str
     ndvi: str
     lst: str
     tmean: str
@@ -77,6 +79,11 @@ def discover_year_paths(data_root: str | Path, year: int) -> YearPaths:
         root / f"{year}_Tree_NLCD.tif",
         root / f"{year}_tree_nlcd.tif",
     ])
+    landcover = _first_existing([
+        root / f"{year}_NLCD_LandCover.tif",
+        root / f"{year}_nlcd_landcover.tif",
+        root / f"{year}_NLCD_land_cover.tif",
+    ])
     ndvi = _first_existing([root / f"NDVI_{year}_Albers_clip_resampled.tif"])
     lst = _first_existing([root / f"LST_{year}_Albers_clip_resampled.tif"])
     ppt = _first_existing(
@@ -94,6 +101,7 @@ def discover_year_paths(data_root: str | Path, year: int) -> YearPaths:
 
     required = {
         "nlcd": nlcd,
+        "landcover": landcover,
         "ndvi": ndvi,
         "lst": lst,
         "tmean": tmean,
@@ -105,6 +113,7 @@ def discover_year_paths(data_root: str | Path, year: int) -> YearPaths:
     return YearPaths(
         year=year,
         nlcd=str(nlcd),
+        landcover=str(landcover),
         ndvi=str(ndvi),
         lst=str(lst),
         tmean=str(tmean),

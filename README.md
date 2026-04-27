@@ -7,12 +7,13 @@ This project predicts tree canopy cover from annual raster inputs using:
 - a ViT-based dense regressor with optional Prithvi pretrained weights
 - optional temporal consistency regularization across adjacent years
 
-The current feature stack is fixed to 4 channels:
+The current feature stack is fixed to 5 channels:
 
 1. `nlcd`
-2. `ndvi`
-3. `lst`
-4. `tmean`
+2. `landcover`
+3. `ndvi`
+4. `lst`
+5. `tmean`
 
 ## Project Flow
 
@@ -45,6 +46,7 @@ Every new launcher-driven run now goes into a fresh timestamped folder using the
 data/
   2015/
     2015_Tree_NLCD.tif
+    2015_NLCD_LandCover.tif
     NDVI_2015_Albers_clip_resampled.tif
     LST_2015_Albers_clip_resampled.tif
     Tree_2015.tif
