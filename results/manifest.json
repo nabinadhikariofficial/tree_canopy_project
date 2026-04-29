@@ -1,0 +1,37 @@
+{
+  "reference_year": 2015,
+  "test_year": 2023,
+  "selected_crop": {
+    "top": 1088,
+    "left": 1472,
+    "size": 320
+  },
+  "final_model": "unet_2023",
+  "best_prithvi_for_map_comparison": "prithvi_300m_consistency_2023",
+  "generated_figures": [
+    "figure_01_workflow_diagram.png",
+    "figure_02_input_stack_sample.png",
+    "figure_03_map_comparison_2023.png",
+    "figure_04_edge_artifact_fix.png",
+    "figure_05_metrics_bar_chart.png",
+    "figure_06_final_unet_scatter.png",
+    "figure_07_learning_evolution_2015_2023.png",
+    "figure_08_run_progression.png",
+    "figure_09_yearly_canopy_evolution_2015_2023.png",
+    "figure_10_training_history_final_unet.png"
+  ],
+  "generated_tables": [
+    "table_01_dataset_year_availability.csv",
+    "table_01_dataset_year_availability.md",
+    "table_02_model_configuration_summary.csv",
+    "table_02_model_configuration_summary.md",
+    "table_03_historical_run_progression.csv",
+    "table_03_historical_run_progression.md",
+    "table_04_final_consolidated_metrics_20260427_152647.csv",
+    "table_04_final_consolidated_metrics_20260427_152647.md",
+    "table_05_landcover_ablation.csv",
+    "table_05_landcover_ablation.md",
+    "table_06_limitations_and_future_work.csv",
+    "table_06_limitations_and_future_work.md"
+  ]
+}

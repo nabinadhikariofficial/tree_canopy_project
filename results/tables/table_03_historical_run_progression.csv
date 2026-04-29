@@ -1,0 +1,6 @@
+run,channels,train_patches,val_patches,test_patches,best_model,best_eval_rmse,best_eval_r2,artifact_fixed,notable_change
+runs 04_24,4,266,69,26,U-Net,25.48687620538618,0.6925114612631607,no,legacy 4-channel baseline; raw best metrics but invalid border coverage
+runs 04_27,4,286,72,32,U-Net + Consistency,26.31168190966687,0.672047001631322,yes,post-fix rerun; artifact removed but quality regressed
+20260427_134448,4,876,174,78,U-Net,26.170983671992968,0.6755449945650385,yes,"dense patches, augmentation, calibration"
+20260427_143154,5,876,174,78,U-Net,25.761802142886438,0.6856113445645478,yes,added NLCD land cover channel
+20260427_152647,5,876,174,78,U-Net,25.761802142886438,0.6856113445645478,yes,latest full comparison including Prithvi 100M and 300M

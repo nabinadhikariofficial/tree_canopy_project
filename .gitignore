@@ -3,6 +3,7 @@
 /data
 /model_prithivi_weights
 **/__pycache__/
+_aligned/
 aligned/
 rf.joblib
 best.pt

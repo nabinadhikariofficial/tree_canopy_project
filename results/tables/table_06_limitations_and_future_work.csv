@@ -1,0 +1,8 @@
+category,current_limitation,impact_on_results,recommended_future_work
+Supervision,Only a small number of years have canopy labels for direct supervision.,"Limits model capacity, especially for large transformers.",Add more labeled years or use pseudo-labeling / semi-supervised expansion.
+Spatial generalization,Evaluation is limited to a held-out year within the same study domain.,Does not prove transfer across regions or ecosystems.,Run cross-region and cross-domain validation experiments.
+Temporal prior,Consistency loss assumes smooth year-to-year evolution except for weighted change areas.,Can suppress real abrupt canopy changes.,Use uncertainty-aware or change-detection-guided consistency losses.
+Categorical encoding,NLCD canopy and land cover are passed as numeric channels.,May underuse semantic categorical structure.,Try one-hot or embedding-based categorical encodings.
+Transformer transfer,Prithvi pretraining does not match the downstream canopy regression setup closely.,Large pretrained models underperform despite higher capacity.,"Test alternate adapters, multi-scale heads, or domain-specific fine-tuning strategies."
+Search breadth,Hyperparameter exploration was meaningful but not exhaustive.,Some performance gains may remain undiscovered.,Run a focused sweep on the U-Net family only.
+Evaluation scope,Final claims depend heavily on 2023 as the held-out year.,Robustness across years is not fully characterized.,Add cross-year validation and uncertainty analysis.
