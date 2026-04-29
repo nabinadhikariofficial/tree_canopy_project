@@ -1,0 +1,28 @@
+{
+  "train_years_loaded": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "supervised_years": [
+    2015,
+    2021
+  ],
+  "consistency_years": [
+    2015,
+    2021
+  ],
+  "test_year": 2023,
+  "reference_year": 2015,
+  "train_stride": 64,
+  "eval_stride": 64,
+  "augment": true,
+  "num_train_patches": 876,
+  "num_val_patches": 174,
+  "num_test_patches": 78
+}
